@@ -3,6 +3,7 @@
 #include <stdio.h>
 
 int main(){
-    char dir[] = "diretorio";
-    mkdir(dir, S_IRWXU);
+    char dir[10];
+    scanf("%s", dir);
+    mkdir(dir, 0777);
 }
