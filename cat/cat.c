@@ -12,15 +12,16 @@ int main(int argc, char **argv){
         printf("error");
     }
     else{
-        file = open(argv[1], O_RDONLY);
+        file = open(argv[1], O_RDONLY); //abrindo o arquivo para ler
         if (file == -1){
             printf("erro na leitura");
         }
         else{
+            // o read vai ler os bytes do arquivo
             while((ler_tamanho = read(file, buf, 50)) > 0){
-                write(1, &buf, ler_tamanho);
-            }
+                write(1, &buf, ler_tamanho); //irá escrever o conteúdo do arquivo
+            } 
         }
-        close(file);
+        close(file); //fechando o arquivo
     }
 }
